@@ -1,0 +1,135 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.winso.break_law.activity.CathePhotoActivity" >
+
+    <include
+        android:id="@+id/include1"
+        layout="@layout/activity_main_header" />
+
+    <RelativeLayout
+        android:id="@+id/content_view"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@color/activity_view_bg" >
+
+        <RadioGroup
+            android:id="@+id/rg_tabs"
+            style="@style/BreakLaw.MainTab"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/back" >
+
+            <RadioButton
+                android:id="@+id/photo_picture"
+                style="@style/BreakLaw.MainTab.Button"
+                android:button="@null"
+                android:drawableTop="@drawable/func_cathe_photo"
+                android:text="@string/photo_picture" />
+
+            <RadioButton
+                android:id="@+id/photo_import"
+                style="@style/BreakLaw.MainTab.Button"
+                android:button="@null"
+                android:drawableTop="@drawable/func_read"
+                android:text="@string/photo_import" />
+
+        </RadioGroup>
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/edit_fpr_opinion"
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tx_project_dept"
+        android:ems="10"
+        android:textSize="@dimen/text_size_14" >
+
+        <requestFocus />
+    </EditText>
+
+    <Spinner
+        android:id="@+id/photo_spin_prop"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/tx_project_dept"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/photo_btn_user_define"
+        android:layout_toRightOf="@+id/tx_project_dept"
+        android:layout_weight="1" />
+
+    <FrameLayout
+        android:id="@+id/framelayout_vide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/content_view"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/edit_fpr_opinion" >
+
+        <ImageView
+            android:id="@+id/photo_cathe_save_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/abc_ab_stacked_transparent_dark_holo" />
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/photo_btn_user_define"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/include1"
+        android:layout_marginRight="14dp"
+        android:layout_toLeftOf="@+id/photo_btn_action"
+        android:background="#00000000"
+        android:drawableLeft="@drawable/btn_user_define_rule"
+        android:text="@string/s_user_define_option"
+        android:textSize="@dimen/text_size_14"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/photo_btn_action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/photo_btn_user_define"
+        android:layout_alignBottom="@+id/photo_btn_user_define"
+        android:layout_marginRight="34dp"
+        android:layout_toLeftOf="@+id/photo_btn_danger"
+        android:background="#00000000"
+        android:drawableLeft="@drawable/btn_action_rule"
+        android:text="@string/s_action_option"
+        android:textSize="@dimen/text_size_14" />
+
+    <Button
+        android:id="@+id/photo_btn_danger"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/photo_btn_action"
+        android:layout_alignBottom="@+id/photo_btn_action"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:background="#00000000"
+        android:drawableLeft="@drawable/btn_danger_rule"
+        android:text="@string/s_danger_option"
+        android:textSize="@dimen/text_size_14" />
+
+    <TextView
+        android:id="@+id/tx_project_dept"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/photo_btn_user_define"
+        android:paddingRight="8dp"
+        android:paddingTop="8dp"
+        android:text="@string/photo_break_law_opt"
+        android:textColor="@color/dark_gray"
+        android:textSize="@dimen/abc_action_bar_title_text_size" />
+
+</RelativeLayout>

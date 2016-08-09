@@ -1,0 +1,146 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.winso.break_law.activity.ReformActivity" >
+
+    <include
+        android:id="@+id/include1"
+        layout="@layout/activity_main_header" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/include1"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:background="@color/line_color" />
+
+            <TextView
+                android:id="@+id/TextView01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="违规内容:"
+                android:textColor="@color/author_text" />
+
+            <TextView
+                android:id="@+id/break_rule_content_reform"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="2dp"
+                android:text="TextView" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                 android:background="@color/line_color" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="4dp" >
+
+                <TextView
+                    android:id="@+id/TextView02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="违规图片:"
+                    android:textColor="@color/author_text" />
+
+                <TextView
+                    android:id="@+id/tx_break_option"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="整改图片:"
+                    android:textColor="@color/author_text" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/img_break_law_1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="170dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:paddingRight="1dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/btn_about_pic_sel" />
+
+                <ImageView
+                    android:id="@+id/img_break_law_reform"
+                    android:layout_width="fill_parent"
+                    android:layout_height="170dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/btn_sync_pic_sel" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="整改内容:"
+                android:textColor="@color/author_text" />
+
+  <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                 android:background="@color/line_color" />
+            <EditText
+                android:id="@+id/ed_reform_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textMultiLine" >
+
+                <requestFocus />
+            </EditText>
+        </LinearLayout>
+    </ScrollView>
+
+    <RadioGroup
+        android:id="@+id/rg_tabs"
+        style="@style/BreakLaw.MainTab"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/back" >
+
+        <RadioButton
+            android:id="@+id/photo_picture"
+            style="@style/BreakLaw.MainTab.Button"
+            android:button="@null"
+            android:drawableTop="@drawable/func_cathe_photo"
+            android:text="@string/photo_picture" />
+
+        <RadioButton
+            android:id="@+id/photo_import"
+            style="@style/BreakLaw.MainTab.Button"
+            android:button="@null"
+            android:drawableTop="@drawable/func_read_pic_sel"
+            android:text="@string/photo_import" />
+    </RadioGroup>
+
+</RelativeLayout>

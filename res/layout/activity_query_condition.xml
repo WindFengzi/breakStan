@@ -1,0 +1,99 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.winso.break_law.activity.CathePhotoActivity" >
+
+    <include
+        android:id="@+id/include1"
+        layout="@layout/activity_main_header" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/linearLayout3"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tx_break_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="结束时间:"
+            android:textSize="@dimen/abc_action_bar_title_text_size" />
+
+        <Button
+            android:id="@+id/btn_end_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="#00000000"
+            android:drawableRight="@drawable/btn_end_time"
+            android:hint="选择结束时间"
+            android:minHeight="45dip"
+            android:paddingRight="4dp"
+            android:textColor="@color/author_text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/btn_prop"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tx_break_option"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="开始时间:"
+            android:textSize="@dimen/abc_action_bar_title_text_size" />
+
+        <Button
+            android:id="@+id/btn_start_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="#00000000"
+            android:drawableRight="@drawable/btn_end_time"
+            android:hint="选择开始时间"
+            android:minHeight="45dip"
+            android:paddingRight="4dp"
+            android:textColor="@color/author_text" />
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/btn_prop"
+        android:layout_width="140dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/include1"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="38dp"
+        android:layout_toRightOf="@+id/tx_project_dept"
+        android:layout_weight="0.21"
+        android:background="#00000000"
+        android:gravity="center"
+        android:paddingLeft="6dp"
+        android:paddingRight="4dp" />
+
+    <TextView
+        android:id="@+id/tx_project_dept"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/btn_prop"
+        android:layout_marginLeft="20dp"
+        android:paddingRight="8dp"
+        android:paddingTop="8dp"
+        android:text="@string/photo_break_law_opt"
+        android:textSize="@dimen/abc_action_bar_title_text_size" />
+
+</RelativeLayout>

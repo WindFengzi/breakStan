@@ -1,0 +1,1 @@
+scons --64    --sharedclient    --dynamic-windows     --prefix="E:\dev_env\3dev\mongo"    --cpppath="E:\dev_env\3dev\boost_1.55_2013_install\include\boost-1_55"    --libpath="E:\dev_env\3dev\boost_1.55_2013_install\"    install

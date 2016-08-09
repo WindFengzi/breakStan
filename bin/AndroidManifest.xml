@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.winso.break_law"
+    android:versionCode="44"
+    android:versionName="1.0.44" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
+   
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <application
+        android:name=".app.AppContext"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" 
+        android:screenOrientation="nosensor"
+        android:configChanges="orientation|keyboardHidden" >
+        <activity
+            android:name=".activity.AppStart"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.SettingActivity"
+            android:label="@string/title_activity_setting"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.SelectProjectActivity"
+            android:label="@string/title_activity_select_project"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <activity
+            android:name=".activity.AboutActivity"
+            android:label="@string/title_activity_comm_header"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.CathePhotoActivity"
+            android:label="@string/title_activity_comm_header"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.ActionlibraryActivity"
+            android:label="@string/title_activity_actionlibrary"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.DangerLibraryActivity"
+            android:label="@string/title_activity_danger_library"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.DateTimeDialogActivity"
+            android:label="@string/title_activity_danger_library"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.SyncActivity"
+            android:label="@string/title_activity_sync"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.ReformMainActivity"
+            android:label="@string/title_activity_reform"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.ViewPicActivity"
+            android:label="@string/title_activity_view_pic" 
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.ReformActivity"
+            android:label="@string/title_activity_reform"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.QueryConditionActivity"
+            android:label="@string/title_activity_reform"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.winso.break_law.activity.MainBreakViewActivity"
+            android:label="@string/title_activity_break_view"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.winso.break_law.activity.MainReformViewActivity"
+            android:label="@string/title_activity_reform_view"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.winso.break_law.activity.BreakViewModifyActivity"
+            android:label="@string/title_activity_reform_view"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.winso.break_law.activity.ReformViewModifyActivity"
+            android:label="@string/title_activity_reform_view"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.winso.break_law.activity.MainQueryBreakViewActivity"
+            android:label="@string/title_activity_reform_view"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.winso.break_law.activity.QueryViewActivity"
+            android:label="@string/title_activity_reform_view"
+            android:screenOrientation="portrait" >
+        </activity>
+    </application>
+
+</manifest>

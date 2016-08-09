@@ -1,0 +1,29 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.winso.break_law.activity.CathePhotoActivity" >
+
+    <include
+        android:id="@+id/include1"
+        layout="@layout/activity_main_header" />
+
+    <FrameLayout
+        android:id="@+id/framelayout_vide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/include1" >
+
+        <com.handmark.pulltorefresh.library.PullToRefreshListView
+            android:id="@+id/lt_reform_sub"
+            android:layout_width="match_parent"
+            android:layout_height="433dp" >
+        </com.handmark.pulltorefresh.library.PullToRefreshListView>
+
+    </FrameLayout>
+
+</RelativeLayout>

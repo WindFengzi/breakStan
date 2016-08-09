@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/TextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearLayout2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="21dp"
+        android:text="@string/app_company"
+        android:textColor="@color/black_60p_transparent"
+        android:textSize="@dimen/text_size_10"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingRight="8dp" >
+
+            <TextView
+                android:id="@+id/TextView07"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="传真:"
+                android:textSize="@dimen/text_size_10" />
+
+            <TextView
+                android:id="@+id/TextView06"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="邮件:"
+                android:textSize="@dimen/text_size_10" />
+
+            <TextView
+                android:id="@+id/tx_break_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="网站:"
+                android:textSize="@dimen/text_size_10" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="电话:"
+                android:textSize="@dimen/text_size_10" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="27dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingBottom="15dp" >
+
+            <TextView
+                android:id="@+id/TextView04"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:autoLink="phone"
+                android:gravity="center|left"
+                android:text="@string/s_com_fax"
+                android:textSize="@dimen/text_size_10" />
+
+            <TextView
+                android:id="@+id/TextView02"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:autoLink="email"
+                android:gravity="center|left"
+                android:text="@string/s_com_email"
+                android:textSize="@dimen/text_size_10" />
+
+            <TextView
+                android:id="@+id/tx_break_option"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:gravity="center|left"
+                android:text="@string/s_com_web"
+                android:textSize="@dimen/text_size_10" />
+
+            <TextView
+                android:id="@+id/tx_project_dept"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoLink="phone"
+                android:gravity="center|left"
+                android:text="@string/s_com_phone"
+                android:textSize="@dimen/text_size_10" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/about_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/break_rule_content_reform"
+        android:layout_centerVertical="true"
+        android:text="版本：1.0.0"
+        android:textColor="@color/black_60p_transparent" />
+
+    <TextView
+        android:id="@+id/tx_break_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/about_version"
+        android:layout_alignRight="@+id/imageView1"
+        android:text="@string/app_name"
+        android:textColor="@color/black_60p_transparent"
+        android:textSize="@dimen/text_size_14"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="156dp"
+        android:layout_height="143dp"
+        android:layout_above="@+id/tx_break_date"
+        android:layout_centerHorizontal="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/eastsun_company_logo" />
+
+    <Button
+        android:id="@+id/break_rule_content_reform"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_above="@+id/TextView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="19dp"
+        android:background="@color/cadetblue"
+        android:minHeight="35dp"
+        android:text="检查新版本"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_12" />
+
+</RelativeLayout>

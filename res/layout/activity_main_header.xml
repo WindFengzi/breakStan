@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content_view"
+    android:layout_width="fill_parent"
+    android:layout_height="50dp"
+    android:background="@color/activity_view_bg" >
+
+    <TextView
+        android:id="@+id/tx_header_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/s_header_title"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@drawable/blue_tabbargray_reverse_drawable"
+        android:textSize="@dimen/text_size_16" />
+
+    <Button
+        android:id="@+id/btn_back"
+        style="@style/BreakLaw.MainTab.Button"
+        android:layout_width="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="5dp"
+        android:drawableLeft="@drawable/btn_back_header"
+        android:minWidth="20dp"
+        android:paddingLeft="1dp" />
+
+    <Button
+        android:id="@+id/btn_save"
+        style="@style/BreakLaw.MainTab.Button"
+        android:layout_width="38dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_weight="0.05"
+        android:drawableLeft="@drawable/btn_save" />
+
+</RelativeLayout>

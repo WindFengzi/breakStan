@@ -1,0 +1,121 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    tools:context="com.winso.break_law.activity.MainActivity" >
+
+    <TableLayout
+        android:id="@+id/tableLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/imageView2"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="4dp" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/main_footbar_func_cathe_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/cache"
+                android:text="违规抓拍"
+                android:textSize="@dimen/text_size_12" />
+
+            <Button
+                android:id="@+id/main_footbar_func_read_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/pywg"
+                android:text="批阅违规"
+                android:textSize="@dimen/text_size_12" />
+
+            <Button
+                android:id="@+id/main_footbar_func_reform_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/zgzp"
+                android:text="整改抓拍"
+                android:textSize="@dimen/text_size_12" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/main_footbar_func_draft_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/pyzg"
+                android:text="批阅整改"
+                android:textSize="@dimen/text_size_12" />
+
+            <Button
+                android:id="@+id/main_footbar_func_query_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/query"
+                android:text="查询信息"
+                android:textSize="@dimen/text_size_12" />
+
+            <Button
+                android:id="@+id/btn_setting_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/setting"
+                android:text="设置信息"
+                android:textSize="@dimen/text_size_12" />
+        </TableRow>
+    </TableLayout>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/main_mid" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/s_setting"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/eastsun_company_logo" />
+
+    <TextView
+        android:id="@+id/s_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imageView2"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:paddingRight="94dp"
+        android:text="东太违规行为管理系统"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="@dimen/text_size_14" />
+
+</RelativeLayout>

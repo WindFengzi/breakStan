@@ -1,0 +1,97 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.winso.break_law.activity.MainActivity" >
+
+    <RadioGroup
+        android:id="@+id/rg_tabs"
+        style="@style/BreakLaw.MainTab"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" >
+
+        <RadioButton
+            android:id="@+id/main_footbar_func_cathe_2"
+            style="@style/BreakLaw.MainTab.Button"
+            android:button="@null"
+            android:drawableTop="@drawable/func_cathe_photo"
+            android:text="@string/func_catch_photo" />
+
+        <RadioButton
+            android:id="@+id/main_footbar_func_read"
+            style="@style/BreakLaw.MainTab.Button"
+            android:button="@null"
+            android:drawableTop="@drawable/func_read"
+            android:text="@string/func_read_breaklaw" />
+
+        <RadioButton
+            android:id="@+id/main_footbar_func_reform"
+            style="@style/BreakLaw.MainTab.Button"
+            android:button="@null"
+            android:drawableTop="@drawable/func_reform_d"
+            android:text="@string/func_reform" />
+
+        <RadioButton
+            android:id="@+id/main_footbar_func_draft"
+            style="@style/BreakLaw.MainTab.Button"
+            android:button="@null"
+            android:drawableTop="@drawable/func_query"
+            android:text="@string/func_read_reform" />
+
+        
+        <RadioButton
+            android:id="@+id/main_footbar_func_query"
+            style="@style/BreakLaw.MainTab.Button"
+            android:button="@null"
+            android:drawableTop="@drawable/func_query"
+            android:text="@string/func_query" />
+        
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/gainsboro"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/RadioButton02"
+            style="@style/BreakLaw.MainTab.Button"
+            android:button="@null"
+            android:drawableTop="@drawable/func_take_photo"
+            android:text="拍照" />
+
+        <RadioButton
+            android:id="@+id/btn_setting"
+            style="@style/BreakLaw.MainTab.Button"
+            android:button="@null"
+            android:drawableTop="@drawable/func_setting"
+            android:text="@string/func_setting" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rg_tabs"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/linearLayout1"
+        android:scaleType="fitXY"
+        android:src="@drawable/main_background" />
+
+    <TextView
+        android:id="@+id/tx_gps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="29dp"
+        android:text="---"
+        android:textColor="@color/indigo" />
+
+</RelativeLayout>

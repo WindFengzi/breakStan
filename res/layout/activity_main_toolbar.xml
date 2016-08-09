@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/activity_view_bg" >
+
+    <RadioGroup
+        android:id="@+id/rg_tabs"
+        style="@style/BreakLaw.MainTab"
+        android:layout_alignParentBottom="true" >
+
+        <RadioButton
+            android:id="@+id/main_footbar_func_cathe_2"
+            style="@style/BreakLaw.MainTab.Button"
+            android:button="@null"
+            android:drawableTop="@drawable/func_cathe_photo"
+            android:text="@string/func_catch_photo" />
+
+        <RadioButton
+            android:id="@+id/main_footbar_func_reform"
+            style="@style/BreakLaw.MainTab.Button"
+            android:button="@null"
+            android:drawableTop="@drawable/func_reform_d"
+            android:text="@string/func_reform" />
+
+        <RadioButton
+            android:id="@+id/main_footbar_func_read"
+            style="@style/BreakLaw.MainTab.Button"
+            android:button="@null"
+            android:drawableTop="@drawable/func_read"
+            android:text="@string/func_read" />
+
+        <RadioButton
+            android:id="@+id/main_footbar_func_draft"
+            style="@style/BreakLaw.MainTab.Button"
+            android:button="@null"
+            android:drawableTop="@drawable/func_query"
+            android:text="@string/func_query" />
+
+        <RadioButton
+            android:id="@+id/btn_setting"
+            style="@style/BreakLaw.MainTab.Button"
+            android:button="@null"
+            android:drawableTop="@drawable/func_setting"
+            android:text="@string/func_setting" />
+    </RadioGroup>
+
+</RelativeLayout>
