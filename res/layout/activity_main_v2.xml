@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:drawableTop="@drawable/cache"
+                android:drawableTop="@drawable/image_btn_cache_press"
                 android:text="违规抓拍"
                 android:textSize="@dimen/text_size_12" />
 
@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:drawableTop="@drawable/pywg"
+                android:drawableTop="@drawable/image_btn_pywg_press"
                 android:text="批阅违规"
                 android:textSize="@dimen/text_size_12" />
 
@@ -48,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:drawableTop="@drawable/zgzp"
+                android:drawableTop="@drawable/image_btn_zgzp_press"
                 android:text="整改抓拍"
                 android:textSize="@dimen/text_size_12" />
         </TableRow>
@@ -64,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:drawableTop="@drawable/pyzg"
+                android:drawableTop="@drawable/image_btn_pyzg_press"
                 android:text="批阅整改"
                 android:textSize="@dimen/text_size_12" />
 
@@ -74,7 +74,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:drawableTop="@drawable/query"
+                android:drawableTop="@drawable/image_btn_query_press"
                 android:text="查询信息"
                 android:textSize="@dimen/text_size_12" />
 
@@ -84,7 +84,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:drawableTop="@drawable/setting"
+                android:drawableTop="@drawable/image_btn_setting_press"
                 android:text="设置信息"
                 android:textSize="@dimen/text_size_12" />
         </TableRow>

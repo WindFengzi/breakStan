@@ -88,5 +88,8 @@
      <string name="s_reform_content">整改内容:</string>
     <string name="s_check_status">审核状态:</string>
     <string name="s_break_pic">违规图片:</string>
-
+	
+	<string name="cent_ip_hint">输入IP或者域名</string>
+   	<string name="about">关于</string>
+    <string name="loginOut">退出</string>
 </resources>

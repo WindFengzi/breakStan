@@ -124,7 +124,7 @@
         android:layout_alignRight="@+id/imageView1"
         android:text="@string/app_name"
         android:textColor="@color/black_60p_transparent"
-        android:textSize="@dimen/text_size_14"
+        android:textSize="@dimen/text_size_18"
         android:textStyle="bold" />
 
     <ImageView
@@ -138,15 +138,15 @@
 
     <Button
         android:id="@+id/break_rule_content_reform"
-        android:layout_width="80dp"
-        android:layout_height="30dp"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
         android:layout_above="@+id/TextView1"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="19dp"
-        android:background="@color/cadetblue"
+        android:background="@drawable/image_btn_check_press"
         android:minHeight="35dp"
         android:text="检查新版本"
         android:textColor="@android:color/white"
-        android:textSize="@dimen/text_size_12" />
+        android:textSize="@dimen/text_size_15" />
 
 </RelativeLayout>

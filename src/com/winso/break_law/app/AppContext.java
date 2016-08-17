@@ -1,31 +1,32 @@
 package com.winso.break_law.app;
 
-import android.location.LocationManager;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Vector;
 
-import com.winso.break_law.activity.MainActivity.MyCallBack;
-import com.winso.comm_library.*;
-
-import com.winso.comm_library.icedb.DownloadFileTask;
+import com.winso.comm_library.AssetsDatabaseManager;
+import com.winso.comm_library.EasyLog;
+import com.winso.comm_library.SQLiteUtil;
+import com.winso.comm_library.StringUtils;
+import com.winso.comm_library.TimeZoneUtil;
+import com.winso.comm_library.TinyDB;
 import com.winso.comm_library.icedb.ICEDBUtil;
 import com.winso.comm_library.icedb.SelectHelp;
 import com.winso.comm_library.icedb.SelectHelpParam;
 
+import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Environment;
-import android.widget.Toast;
-import com.winso.comm_library.icedb.DownloadFileTask;
 
 /**
  * 应用程序业务访问类，用于访问各类业务组件等
@@ -367,12 +368,17 @@ public class AppContext extends Application {
 
 	// 获取服务器上Android App的版本号
 	public int getServerVersion() {
-		return Integer.parseInt(m_ice.getConfigure("common",
-				"app_android_version"));
+//		return Integer.parseInt(m_ice.getConfigure("common",
+//				"app_android_version"));
+		String str = m_ice.getConfigure("common","app_android_version");
+//		System.out.println("Appcontext--->" + str + "---");
+		return  str == null || str.equals("") ? 0 : Integer.parseInt(m_ice.getConfigure("common",
+						"app_android_version"));
 	}
 
 	public boolean isCheckUp() {
-		if (Integer.parseInt(getCookie("is_check_up")) == 0) {
+		String strCookie = getCookie("is_check_up");
+		if (strCookie == null || strCookie.equals("") || Integer.parseInt(strCookie) == 0) {
 			return false;
 		}
 		return true;
@@ -1273,4 +1279,31 @@ public class AppContext extends Application {
 	}
 
 	// ///////////////////////////////////////////////////////////////////////
+	
+	/**
+	 * 添加Activity,退出Activity，和单例模式
+	 * @author Hman
+	 * @date 2016/8/15
+	 * */
+	private List<Activity> actList;
+	
+	public void addActivity(Activity activity) {
+		if (null == actList) {
+			actList = new ArrayList<Activity>();
+		}
+		actList.add(activity);
+	}
+
+	public void exit() {
+		for (Activity activity : actList) {
+			activity.finish();
+		}
+	}
+	private static AppContext appContext;
+	public static AppContext getInstance() {
+		if (appContext == null) {
+			appContext = new AppContext();
+		}
+		return appContext;
+	}
 }

@@ -1,17 +1,16 @@
 package com.winso.break_law.app;
 
+import com.winso.break_law.R;
 import com.winso.break_law.activity.AboutActivity;
+import com.winso.break_law.activity.LoginActivity;
 import com.winso.break_law.activity.SelectProjectActivity;
 import com.winso.break_law.activity.SettingActivity;
-import com.winso.break_law.activity.SyncActivity;
 import com.winso.break_law.activity.ViewPicActivity;
 
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-
-import com.winso.break_law.R;
 
 public class UIHelper {
 	//
@@ -87,6 +86,15 @@ public class UIHelper {
 		
 		intent.putExtra("pic_path", sPicPath);
 		
+		ct.startActivity(intent);
+	}
+	/**
+	 * 退出登录
+	 * @author Hman
+	 * @date 2016/07/29
+	 * */
+	public static void exitLogin(Context ct) {
+		Intent intent = new Intent(ct, LoginActivity.class);
 		ct.startActivity(intent);
 	}
 }

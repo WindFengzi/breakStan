@@ -14,7 +14,7 @@
         android:text="@string/s_header_title"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@drawable/blue_tabbargray_reverse_drawable"
-        android:textSize="@dimen/text_size_16" />
+        android:textSize="@dimen/text_size_18" />
 
     <Button
         android:id="@+id/btn_back"
@@ -28,7 +28,7 @@
         android:minWidth="20dp"
         android:paddingLeft="1dp" />
 
-    <Button
+   <!--  <Button
         android:id="@+id/btn_save"
         style="@style/BreakLaw.MainTab.Button"
         android:layout_width="38dp"
@@ -36,6 +36,18 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_weight="0.05"
-        android:drawableLeft="@drawable/btn_save" />
+        android:drawableLeft="@drawable/btn_save" /> -->
+    
+    <Button
+        android:id="@+id/btn_save"
+        style="@style/BreakLaw.MainTab.Button"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="10dp"
+        android:minWidth="20dp"
+        android:paddingLeft="1dp" />
 
 </RelativeLayout>

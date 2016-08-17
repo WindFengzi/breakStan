@@ -110,7 +110,7 @@ public class AboutActivity extends BaseActivity {
 			e.printStackTrace();
 		}
 
-		// 抓图
+		// 检查更新
 		mBtCheckVersion = (Button) findViewById(R.id.break_rule_content_reform);
 		mBtCheckVersion.setOnClickListener(new OnClickListener() {
 			@Override
@@ -143,7 +143,6 @@ public class AboutActivity extends BaseActivity {
 							public void onClick(DialogInterface dialog,
 									int which) {
 								dialog.dismiss();
-
 								// new
 								// DownloadFileTask(app.m_ice,mContext,"release/hello.txt","/mnt/sdcard/",myCallBack).execute();
 								downloadApk();

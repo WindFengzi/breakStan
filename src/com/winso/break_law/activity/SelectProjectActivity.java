@@ -70,7 +70,7 @@ public class SelectProjectActivity extends BaseActivity {
 					rtnValue.valueStringByName(i, "org_name"));
 			map.put("org_id", rtnValue.valueStringByName(i, "org_id"));
 
-			map.put("btn_save_sel", R.drawable.btn_save);
+			map.put("btn_save_sel", R.drawable.btn_click_pro);
 			mListItem.add(map);
 		}
 

@@ -4,7 +4,6 @@ import com.winso.break_law.R;
 import com.winso.break_law.app.AppContext;
 import com.winso.break_law.app.UIHelper;
 import com.winso.comm_library.CallbackInterface;
-import com.winso.comm_library.upload.DownloadFile;
 import com.winso.comm_library.widget.SwitchButton;
 
 import android.content.Intent;
@@ -23,10 +22,11 @@ public class SettingActivity extends BaseActivity {
 	private SwitchButton mStMessageV,mCheckAutoLogin;
 	private SwitchButton mStMessageNight;
 	private EditText mEdCentIP, mEdProject;
-	private Button mBtSave,mBtBack;
+	private Button mBtBack;
 	private RadioButton mBtAbout,mBtSync;
 	private AppContext appContext;
-	
+	private TextView tvAbout;
+	private Button exitLogin;
 //	private DownloadFile download = null;
 	private boolean bProcessUpfile = false;
 	private MyCallBack myCallBack;
@@ -48,62 +48,42 @@ public class SettingActivity extends BaseActivity {
 		mStMessageV = (SwitchButton) findViewById(R.id.st_enable_message_v);
 		mStMessageNight = (SwitchButton) findViewById(R.id.st_enable_message_night);
 		mEdCentIP = (EditText) findViewById(R.id.ed_cent_ip);
-		mBtSave = (Button) findViewById(R.id.btn_save);
-		mBtSave.setOnClickListener(new OnClickListener() {
+
+		fbSave = (Button) findViewById(R.id.btn_save);
+		getRightChangeBtn(RIGHT_SAVE);
+		fbSave.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				save();
 			}
 		});
-
+		
 		mBtBack = (Button) findViewById(R.id.btn_back);
 		mBtBack.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				
-				
-				
-				
 				finish();
 			}
 		});
-
 		
-		mBtSync = (RadioButton) findViewById(R.id.main_footbar_func_draft);
-		mBtSync.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				//UIHelper.openSync(v.getContext());
-				
-				//new DownloadFileTask(appContext.m_ice,SettingActivity.this,"release/hello.txt","/mnt/sdcard/",myCallBack).execute();
-				
-				Intent intent = new Intent(v.getContext(),
-						SyncActivity.class);
-				startActivityForResult(intent, UIHelper.INTENT_SYNC_ACTIONS);
+//		mBtSync = (RadioButton) findViewById(R.id.main_footbar_func_draft);
+//		mBtSync.setOnClickListener(new OnClickListener() {
+//			@Override
+//			public void onClick(View v) {
+//				Intent intent = new Intent(v.getContext(),
+//						SyncActivity.class);
+//				startActivityForResult(intent, UIHelper.INTENT_SYNC_ACTIONS);
+//			}
+//		});
 
-				
-//				download = DownloadFile.getDownloadManager();
-//				String apkUrl="";
-//				apkUrl = "http://";
-//				apkUrl += appContext.getCookie("http_server");
-//				apkUrl += ":";
-//				apkUrl += appContext.getCookie("http_port");
-//				apkUrl += "/upfile/release/";
-//				
-//				download.download(SettingActivity.this,apkUrl,"break_law_init.db",
-//						appContext.DEFAULT_DB_SAVE_PATH());
-			}
-		});
-
-		
-		mBtAbout = (RadioButton) findViewById(R.id.btn_about);
-		mBtAbout.setOnClickListener(new OnClickListener() {
+		tvAbout = (TextView) findViewById(R.id.about_tv);
+		tvAbout.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				UIHelper.openAbout(v.getContext());
 			}
 		});
-
+		
 		mEdProject = (EditText) findViewById(R.id.ed_project);
 		mEdProject.setOnClickListener(new OnClickListener() {
 			@Override
@@ -160,7 +140,32 @@ public class SettingActivity extends BaseActivity {
 	}
 	
 	
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		exitLogin = (Button) findViewById(R.id.exit_login);
+		String username = appContext.getCookie("login_exit");
+		System.out.println("username--->" + username +"---");
+		if (username == "login" || ("login").equals(username)) {
+			exitLogin.setVisibility(View.VISIBLE);
+		} else {
+			exitLogin.setVisibility(View.INVISIBLE);
+		}
+		
+		exitLogin.setOnClickListener(new OnClickListener() {
 
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				appContext.setCookie("login_exit", "exit");
+				UIHelper.exitLogin(v.getContext());
+				finish();
+//				System.exit(0);
+			}
+			
+		});
+	}
 	
 
 	public class MyCallBack implements CallbackInterface {

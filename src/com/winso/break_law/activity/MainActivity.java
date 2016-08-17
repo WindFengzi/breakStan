@@ -2,6 +2,9 @@ package com.winso.break_law.activity;
 
 import java.io.File;
 import java.util.Iterator;
+import java.util.Timer;
+import java.util.TimerTask;
+
 import com.kbeanie.imagechooser.api.ChooserType;
 import com.winso.break_law.R;
 import com.winso.break_law.app.AppContext;
@@ -30,6 +33,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -169,7 +173,7 @@ public class MainActivity extends BaseActivity {
 
 		initButtonFunction();
 		
-		
+		AppContext.getInstance().addActivity(this);
 		///启动消息服务
 	     // Start the service
         ServiceManager serviceManager = new ServiceManager(this);
@@ -532,4 +536,58 @@ public class MainActivity extends BaseActivity {
 		startActivity(i);
 	}
 
+	/**
+	 * 双击突出查询
+	 * @author Hman
+	 * @date 2016/8/12
+	 * */
+	private long firstTime=0;
+	public boolean onKeyUp(int keyCode, KeyEvent event) { 
+        if (keyCode == KeyEvent.KEYCODE_BACK) { 
+            long secondTime = System.currentTimeMillis(); 
+            if (secondTime - firstTime > 800) {//如果两次按键时间间隔大于800毫秒，则不退出 
+                Toast.makeText(MainActivity.this, "再按一次退出程序", 
+                        Toast.LENGTH_SHORT).show(); 
+                firstTime = secondTime;//更新firstTime 
+                return true; 
+            } else { 
+//                System.exit(0);//否则退出程序 
+            	AppContext.getInstance().exit();
+            } 
+        } 
+        return super.onKeyUp(keyCode, event); 
+    } 
+	
+//	@Override
+//	public boolean onKeyDown(int keyCode, KeyEvent event) {
+//		if (keyCode == KeyEvent.KEYCODE_BACK) {
+//			exitBy2Click();
+//		}
+//		
+//		return false;
+//	}
+//	
+//	private static boolean isExit = false;
+//
+//	private void exitBy2Click() {
+//		Timer tExit = null;
+//		if (isExit == false) {
+//			isExit = true; // 准备退出
+//			Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
+//			tExit = new Timer();
+//			tExit.schedule(new TimerTask(){
+//
+//				@Override
+//				public void run() {
+//					isExit = false; // 取消退出					
+//				}				
+//			}, 2000);
+//			
+//		} else {
+//			finish();
+//			System.exit(0);
+//		}
+//		
+//	}
+	
 }

@@ -70,7 +70,7 @@ public class ReformViewModifyActivity extends BaseActivity {
 	private boolean bProcessSaveOK = false; // 保存是否成功
 	private String sFilePath = ""; // 加载的本地文件图片
 	private String sRectifyID = ""; // 整改编号
-	private Button fbSave;
+//	private Button fbSave;
 	// private ImageView fViewPhoto;
 
 	// private String sImageURL = ""; //远程的ＵＲＬ，确认是否需要加载
@@ -201,8 +201,8 @@ public class ReformViewModifyActivity extends BaseActivity {
 
 		// 设置保存信息
 		fbSave = (Button) findViewById(R.id.btn_save);
-		fbSave.setVisibility(View.INVISIBLE);
-		
+//		fbSave.setVisibility(View.INVISIBLE);
+		getRightChangeBtn(RIGHT_SUBMIT);
 		fbSave.setOnClickListener(new OnClickListener() {
 			
 			@Override

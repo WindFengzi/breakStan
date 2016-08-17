@@ -30,7 +30,7 @@ public class DangerLibraryActivity extends BaseActivity {
 	private ListView actualListView;
 
 	AppContext app;
-	Button fbSave;
+//	Button fbSave;
 	private Spinner mSpDangerType;
 	DangerSelectAdapter mAdapter;
 
@@ -99,13 +99,11 @@ public class DangerLibraryActivity extends BaseActivity {
 
 		// 设置保存信息
 		fbSave = (Button) findViewById(R.id.btn_save);
+		getRightChangeBtn(RIGHT_SAVE);
 		fbSave.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {
-				
-				ProcessSave();
-				
-				
+				ProcessSave();			
 			}
 		}
 
@@ -115,27 +113,6 @@ public class DangerLibraryActivity extends BaseActivity {
 
 	private void ProcessSave() 
 	{
-//		ArrayList<String> info = new ArrayList<String>();  
-//		ArrayList<String> infoNames = new ArrayList<String>();  
-//		for (int i = 0; i < actualListView.getCount(); i++) 
-//		{
-//			
-//			if (  i >= actualListView.getFirstVisiblePosition() &&
-//					i <= actualListView.getLastVisiblePosition() )
-//			{ 
-//				ViewHolder vHollder = (ViewHolder) actualListView.getChildAt(i)
-//						.getTag();
-//				if ( vHollder == null ) continue;
-//				
-//				if ( vHollder.cBox.isChecked() )
-//				{
-//					info.add(vHollder.detail_id.getText().toString());
-//					infoNames.add(vHollder.list_item_title.getText().toString());
-//				}
-//			}
-//			
-//		}
-
 		 //数据是使用Intent返回
         Intent it = getIntent();
      

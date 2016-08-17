@@ -30,7 +30,7 @@ public class MainBreakViewActivity extends BaseActivity {
 	public boolean bIsWorking;
 	AppContext appContext;
 	
-	private Button fbSave,fbReturn;
+	private Button fbReturn;
 	SelectHelp rtnValue = new SelectHelp();
 	
 	@Override
@@ -52,14 +52,12 @@ public class MainBreakViewActivity extends BaseActivity {
 			public void onClick(View v) {
 				finish();
 			}
-		}
-		
+		});
 
-		);
-
-		// 保存
+		// 按日期查询
 		fbSave = (Button) findViewById(R.id.btn_save);
 		//fbSave.setText("条件");
+		getRightChangeBtn(RIGHT_SEARCH);
 		fbSave.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {
@@ -80,12 +78,11 @@ public class MainBreakViewActivity extends BaseActivity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 
-		if (resultCode != RESULT_OK)
-			return;
-
+		if (resultCode != RESULT_OK){
+			return;			
+		}
 		
 		new GetDataTask().execute();
-		
 	}
 
 	

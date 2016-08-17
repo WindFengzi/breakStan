@@ -33,7 +33,7 @@ import com.kbeanie.imagechooser.api.ImageChooserListener;
 import com.kbeanie.imagechooser.api.ImageChooserManager;
 
 /**
- * 应用程序Activity的基类
+ * 违规抓拍的Activity
  * 
  * @author ericgoo
  * @version 1.0
@@ -51,7 +51,7 @@ public class CathePhotoActivity extends BaseActivity implements
 
 	private RadioButton fbCathePhoto;
 	private RadioButton fbImport;
-	private Button fbSave;
+//	private Button fbSave;
 	private Button fbReturn;
 	private ImageView fViewPhoto;
 
@@ -120,16 +120,16 @@ public class CathePhotoActivity extends BaseActivity implements
 
 		);
 
-		// 行为库
-		mBtnUserDefine = (Button) findViewById(R.id.photo_btn_user_define);
-		mBtnUserDefine.setOnClickListener(new OnClickListener() {
-
-			public void onClick(View v) {
-
-			}
-		}
-
-		);
+//		// 行为库
+//		mBtnUserDefine = (Button) findViewById(R.id.photo_btn_user_define);
+//		mBtnUserDefine.setOnClickListener(new OnClickListener() {
+//
+//			public void onClick(View v) {
+//
+//			}
+//		}
+//
+//		);
 
 		// 抓图
 		fbCathePhoto = (RadioButton) findViewById(R.id.photo_picture);
@@ -145,8 +145,9 @@ public class CathePhotoActivity extends BaseActivity implements
 		);
 
 		//
-		// 抓图
+		// 提交违规拍照
 		fbSave = (Button) findViewById(R.id.btn_save);
+		getRightChangeBtn(RIGHT_SAVE);
 		fbSave.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {

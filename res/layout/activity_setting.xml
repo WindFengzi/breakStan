@@ -29,56 +29,90 @@
         android:layout_below="@+id/include_toolbar"
         android:paddingLeft="15dp"
         android:paddingRight="12dp" >
+	
+        <TableLayout 
+            android:id="@+id/tableLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            
+            <ImageView
+	            android:id="@+id/imageLine"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:scaleType="fitXY"
+	            android:src="@drawable/line" />
+            
+            <TableRow 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+		        <TextView
+		            android:id="@+id/tv_title"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:textStyle="bold"
+		            android:textSize="18dp"		            
+		            android:layout_marginTop="10dp"
+		            android:layout_weight="2"
+		            android:text="@string/cent_ip" />
+		        
+		        <EditText
+		            android:id="@+id/ed_cent_ip"
+		            android:layout_width="fill_parent"
+		            android:layout_height="35dp"
+		            android:layout_marginTop="10dp"
+		            android:background="@drawable/edit_border"
+		            android:hint="@string/cent_ip_hint"
+		            android:layout_weight="8" >
+		
+		            <requestFocus />
+		        </EditText>
+            </TableRow>
+            
+            <ImageView
+	            android:id="@+id/ImageView01"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentLeft="true"
+	            android:layout_below="@+id/ed_cent_ip"
+	            android:layout_marginTop="8dp"
+	            android:scaleType="fitXY"
+	            android:src="@drawable/line" />
+            
+            <TableRow 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+		        <TextView
+		            android:id="@+id/tx_break_option"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="10dp"
+		            android:textStyle="bold"
+		            android:textSize="18dp"
+		            android:layout_weight="2"
+		            android:text="@string/s_project_name"/>
+
+		        <EditText
+		             android:id="@+id/ed_project"
+		             android:layout_width="fill_parent"
+		             android:layout_height="35dp"
+		             android:background="@drawable/edit_border"
+		             android:autoLink="all"             
+		             android:layout_marginTop="10dp"
+		             android:layout_weight="8"
+		             android:hint="@string/s_click_select_project" />  
+            </TableRow>
+        </TableLayout>
 
         <ImageView
-            android:id="@+id/imageLine"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:scaleType="fitXY"
-            android:src="@drawable/line" />
-
-        <EditText
-            android:id="@+id/ed_cent_ip"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/imageLine"
-            android:layout_toRightOf="@+id/tv_title"
-            android:ems="10"
-            android:hint="输入IP或者域名" >
-
-            <requestFocus />
-        </EditText>
-
-        <TextView
-            android:id="@+id/tv_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/ed_cent_ip"
-            android:layout_alignBottom="@+id/ed_cent_ip"
-            android:layout_alignParentLeft="true"
-            android:text="@string/cent_ip" />
-
-        <TextView
-            android:id="@+id/tx_break_option"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignRight="@+id/tv_title"
-            android:layout_below="@+id/ImageView01"
-            android:layout_marginTop="20dp"
-            android:text="@string/s_project_name" />
-
-        <ImageView
-            android:id="@+id/ImageView01"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/ed_cent_ip"
-            android:layout_marginTop="13dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/line" />
-
+             android:id="@+id/ImageView04"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:layout_alignRight="@id/tableLayout1"
+             android:layout_below="@id/tableLayout1"
+             android:scaleType="fitXY"
+             android:layout_marginTop="8dp"
+             android:src="@drawable/line" />
+        
          <com.winso.comm_library.widget.SwitchButton
              android:id="@+id/st_enable_message_night"
              android:layout_width="match_parent"
@@ -86,21 +120,26 @@
              android:layout_alignLeft="@+id/ImageView04"
              android:layout_below="@+id/ImageView04"
              android:layout_weight="0.08"
+             android:layout_marginTop="15dp"
              android:text="@string/s_enable_message_night"
              app:frameDrawable="@drawable/switch_frame"
              app:sliderDrawable="@drawable/selector_switch_slider"
              app:stateDrawable="@drawable/selector_switch_state"
              app:stateMaskDrawable="@drawable/switch_state_mask"
              app:withTextInterval="16dp" />
-
+         
          <ImageView
-             android:id="@+id/ImageView04"
+             android:id="@+id/ImageView08"
              android:layout_width="fill_parent"
              android:layout_height="wrap_content"
-             android:layout_alignRight="@+id/ed_project"
-             android:layout_below="@+id/ed_project"
+             android:layout_alignRight="@+id/st_enable_message_v"
+             android:layout_below="@id/st_enable_message_night"
              android:scaleType="fitXY"
+             android:layout_marginTop="5dp"
+             android:layout_marginBottom="5dp"
              android:src="@drawable/line" />
+
+         
 
          <com.winso.comm_library.widget.SwitchButton
              android:id="@+id/st_enable_message_v"
@@ -110,12 +149,24 @@
              android:layout_centerHorizontal="true"
              android:layout_weight="0.02"
              android:text="@string/s_enable_message_v"
+             android:layout_marginTop="15dp"
              app:frameDrawable="@drawable/switch_frame"
              app:sliderDrawable="@drawable/selector_switch_slider"
              app:stateDrawable="@drawable/selector_switch_state"
              app:stateMaskDrawable="@drawable/switch_state_mask"
              app:withTextInterval="16dp" />
 
+         <ImageView
+             android:id="@+id/ImageView07"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:layout_alignRight="@+id/st_enable_message_v"
+             android:layout_below="@id/st_enable_message_v"
+             android:scaleType="fitXY"
+             android:layout_marginTop="5dp"
+             android:layout_marginBottom="5dp"
+             android:src="@drawable/line" />
+         
          <com.winso.comm_library.widget.SwitchButton
              android:id="@+id/st_enable_message"
              android:layout_width="match_parent"
@@ -123,12 +174,24 @@
              android:layout_alignLeft="@+id/st_enable_message_v"
              android:layout_below="@+id/st_enable_message_v"
              android:text="@string/s_enable_message"
+             android:layout_marginTop="15dp"
              app:frameDrawable="@drawable/switch_frame"
              app:sliderDrawable="@drawable/selector_switch_slider"
              app:stateDrawable="@drawable/selector_switch_state"
              app:stateMaskDrawable="@drawable/switch_state_mask"
              app:withTextInterval="16dp" />
 
+         <ImageView
+             android:id="@+id/ImageView06"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:layout_alignRight="@+id/st_enable_message_v"
+             android:layout_below="@id/st_enable_message"
+             android:scaleType="fitXY"
+             android:layout_marginTop="5dp"
+             android:layout_marginBottom="5dp"
+             android:src="@drawable/line" />
+         
          <com.winso.comm_library.widget.SwitchButton
              android:id="@+id/st_enable_2g3g"
              android:layout_width="fill_parent"
@@ -137,6 +200,7 @@
              android:layout_below="@+id/st_enable_message"
              android:layout_weight="0.02"
              android:text="@string/s_enable_2g_3g"
+             android:layout_marginTop="15dp"
              app:frameDrawable="@drawable/switch_frame"
              app:sliderDrawable="@drawable/selector_switch_slider"
              app:stateDrawable="@drawable/selector_switch_state"
@@ -150,6 +214,7 @@
              android:layout_alignRight="@+id/st_enable_message_v"
              android:layout_below="@+id/st_enable_2g3g"
              android:scaleType="fitXY"
+             android:layout_marginTop="5dp"
              android:src="@drawable/line" />
 
          <com.winso.comm_library.widget.SwitchButton
@@ -158,7 +223,7 @@
              android:layout_height="wrap_content"
              android:layout_alignLeft="@+id/ImageView02"
              android:layout_below="@+id/ImageView02"
-             android:layout_marginTop="14dp"
+             android:layout_marginTop="15dp"
              android:layout_weight="0.02"
              android:text="@string/login_dialog_autoLogin"
              app:frameDrawable="@drawable/switch_frame"
@@ -167,24 +232,90 @@
              app:stateMaskDrawable="@drawable/switch_state_mask"
              app:withTextInterval="8dp" />
 
-         <EditText
-             android:id="@+id/ed_project"
+         <ImageView
+             android:id="@+id/ImageView03"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:layout_alignRight="@+id/st_enable_message_v"
+             android:layout_below="@+id/st_auto_login"
+             android:scaleType="fitXY"
+             android:layout_marginTop="5dp"
+             android:layout_marginBottom="5dp"
+             android:src="@drawable/line" />
+         
+         <RelativeLayout 
+             android:id="@+id/layout_about"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
-             android:layout_alignRight="@+id/ImageView01"
-             android:layout_alignTop="@+id/tx_break_option"
-             android:autoLink="all"
-             android:ems="10"
-             android:hint="@string/s_click_select_project" />
+             android:layout_below="@id/ImageView03"
+             android:layout_marginTop="10dp"
+             android:layout_marginBottom="5dp"
+             >
+             
+             <TextView 
+                 android:id="@+id/about_tv"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="@string/about"
+                 android:textSize="20dp"/>
+             
+             <ImageButton 
+                 android:id="@+id/about_imb"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:background="@drawable/btn_back_logo"
+                 android:layout_alignParentRight="true"
+                 android:layout_marginRight="15dp"/>
+         </RelativeLayout>
 
+         <ImageView
+             android:id="@+id/ImageView05"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:layout_alignRight="@+id/st_enable_message_v"
+             android:layout_below="@id/layout_about"
+             android:scaleType="fitXY"
+             android:layout_marginTop="5dp"
+             android:layout_marginBottom="5dp"
+             android:src="@drawable/line" />
+         
+         <Button
+             android:id="@+id/exit_login"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:layout_below="@id/ImageView05"
+             android:background="@drawable/image_btn_check_press"
+             android:text="@string/loginOut"
+             android:layout_marginTop="15dp"
+             android:textSize="20dp"
+             android:textColor="@color/white"
+             android:visibility="visible"/>
+         
     </RelativeLayout>
 
     <RadioGroup
         android:id="@+id/rg_tabs"
         style="@style/BreakLaw.MainTab"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true" >
+        android:layout_alignParentLeft="true" 
+        android:visibility="invisible">
 
+        <RadioButton
+            android:id="@+id/main_btn_sum_report"
+            style="@style/BreakLaw.MainTab.Button"
+            android:button="@null"
+            android:drawableTop="@drawable/func_cathe_photo"
+            android:text="@string/func_catch_photo"
+            android:visibility="invisible" />
+
+        <RadioButton
+            android:id="@+id/bt_write_answer"
+            style="@style/BreakLaw.MainTab.Button"
+            android:button="@null"
+            android:drawableTop="@drawable/func_reform_d"
+            android:text="@string/func_reform"
+            android:visibility="invisible" />
+        
         <RadioButton
             android:id="@+id/main_footbar_func_cathe_2"
             style="@style/BreakLaw.MainTab.Button"
@@ -208,21 +339,23 @@
             android:drawableTop="@drawable/func_read"
             android:text="@string/func_read"
             android:visibility="invisible" />
-
-        <RadioButton
+        
+		<RadioButton
             android:id="@+id/main_footbar_func_draft"
             style="@style/BreakLaw.MainTab.Button"
             android:button="@null"
             android:drawableTop="@drawable/btn_sync_pic"
             android:text="@string/s_sync"
             android:visibility="invisible" />
-
+		
         <RadioButton
             android:id="@+id/btn_about"
             style="@style/BreakLaw.MainTab.Button"
             android:button="@null"
-            android:drawableTop="@drawable/btn_about"
-            android:text="@string/s_about" />
+            android:drawableTop="@drawable/btn_about_pic_sel"
+            android:text="@string/s_about" 
+            android:visibility="invisible"/>
+
     </RadioGroup>
 
 </RelativeLayout>

@@ -62,7 +62,7 @@ public class ReformActivity extends BaseActivity implements
 	private String sBreakImagePath = "", sReformImagePath = "";
 	private SelectHelp rtBreakInfoHelp;
 	private int iBreakRuleType;
-	private Button fbReturn, fbSave;
+	private Button fbReturn;
 
 	private RadioButton fbCathePhoto, fbImport;
 
@@ -208,6 +208,7 @@ public class ReformActivity extends BaseActivity implements
 
 		// 保存
 		fbSave = (Button) findViewById(R.id.btn_save);
+		getRightChangeBtn(RIGHT_SUBMIT);
 		fbSave.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {

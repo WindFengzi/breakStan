@@ -35,7 +35,7 @@ public class ActionlibraryActivity extends BaseActivity {
 	ActionSelectAdapter mAdapter;
 	boolean mbRefreshing = false; // 是否已经在加载
 	ArrayAdapter<CItem> mAdapterCheckItem = null;
-	private Button fbSave;
+//	private Button fbSave;
 	private Spinner mSpCheckItem;
 	private Spinner mSpSafeSubItem;
 	private Spinner mSpCheckItemType; // 固定值：0、全部1、一般项目；2、保证项目；3、其它项目
@@ -90,6 +90,7 @@ public class ActionlibraryActivity extends BaseActivity {
 		//
 		// 设置保存信息
 		fbSave = (Button) findViewById(R.id.btn_save);
+		getRightChangeBtn(RIGHT_SAVE);
 		fbSave.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {

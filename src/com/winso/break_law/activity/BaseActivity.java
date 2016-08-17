@@ -1,12 +1,17 @@
 package com.winso.break_law.activity;
 
+import com.winso.break_law.R;
 import com.winso.break_law.app.AppManager;
+
 import android.app.Activity;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * 应用程序Activity的基类
@@ -24,6 +29,14 @@ public class BaseActivity extends Activity {
 	private boolean allowDestroy = true;
 
 	private View view;
+	
+	public TextView tvRight;
+	public Button fbSave;
+	public final String RIGHT_SUBMIT = "sumit";
+	public final String RIGHT_ADD = "add";
+	public final String RIGHT_SAVE = "save";
+	public final String RIGHT_SEARCH = "search";
+	public final String RIGHT_NULL = "";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +47,10 @@ public class BaseActivity extends Activity {
 				WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN); // 隐藏软件键盘输入。
 		requestWindowFeature(Window.FEATURE_NO_TITLE); // 无标题栏。
 		AppManager.getAppManager().addActivity(this);
+		
+		setContentView(R.layout.activity_main_header);
+//		tvRight = (TextView) findViewById(R.id.text_right);
+		fbSave = (Button) findViewById(R.id.btn_save);
 	}
 
 	@Override
@@ -75,5 +92,37 @@ public class BaseActivity extends Activity {
 			}
 		}
 		return super.onKeyDown(keyCode, event);
+	}
+	
+	/**
+	 * 界面右侧按钮,根据传人值,显示提交和添加按钮
+	 * @author Hman
+	 * @date 2016/8/9
+	 * */
+	public void getRightChangeBtn(String str) {
+		Drawable drawable;
+		
+		if (str.equals(RIGHT_SUBMIT)) {
+			drawable = getResources().getDrawable(R.drawable.btn_true);
+			drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight()); //设置边界
+			fbSave.setCompoundDrawables(null, null, drawable, null);
+		} else if (str.equals(RIGHT_ADD)) {
+			drawable = getResources().getDrawable(R.drawable.btn_add);
+			drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight()); //设置边界
+			fbSave.setCompoundDrawables(null, null, drawable, null);
+		} else if (str.equals(RIGHT_SAVE)) {
+			drawable = getResources().getDrawable(R.drawable.btn_true);
+			drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight()); //设置边界
+			fbSave.setCompoundDrawables(null, null, drawable, null);
+		} else if (str.equals(RIGHT_SEARCH)) {
+			drawable = getResources().getDrawable(R.drawable.search);
+			drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight()); //设置边界
+			fbSave.setCompoundDrawables(null, null, drawable, null);
+		}else if (str.equals(RIGHT_NULL)) {
+			fbSave.setVisibility(View.INVISIBLE);
+		}
+		fbSave.setWidth(fbSave.getWidth());
+		
+		fbSave.setPadding(fbSave.getPaddingLeft(), fbSave.getPaddingTop(), fbSave.getPaddingRight(), fbSave.getPaddingBottom());
 	}
 }

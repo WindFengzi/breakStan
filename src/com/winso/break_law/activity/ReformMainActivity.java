@@ -55,9 +55,10 @@ public class ReformMainActivity extends BaseActivity {
 		vTitle.setText("待整改拍照列表");
 
 		// 修改保存为条件
-		Button bSave = (Button) findViewById(R.id.btn_save);
+		fbSave = (Button) findViewById(R.id.btn_save);
+		getRightChangeBtn(RIGHT_SEARCH);
 		//bSave.setText("条件");
-		bSave.setOnClickListener(new OnClickListener() {
+		fbSave.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {
 

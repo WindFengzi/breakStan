@@ -22,7 +22,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 /**
- * 应用程序Activity的基类
+ * 查询条件Activity的基类
  * 
  * @author ericgoo
  * @version 1.0
@@ -113,8 +113,9 @@ public class QueryConditionActivity extends BaseActivity {
 		});
 
 		//
-		// 抓图
-		Button fbSave = (Button) findViewById(R.id.btn_save);
+		// 提交时间条件
+		fbSave = (Button) findViewById(R.id.btn_save);
+		getRightChangeBtn(RIGHT_SUBMIT);
 		fbSave.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {

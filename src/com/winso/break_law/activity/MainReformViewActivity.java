@@ -34,7 +34,7 @@ public class MainReformViewActivity extends BaseActivity {
 	public boolean bIsWorking;
 	AppContext appContext;
 
-	private Button fbSave, fbReturn;
+	private Button fbReturn;
 	SelectHelp rtnValue = new SelectHelp();
 
 	
@@ -63,6 +63,7 @@ public class MainReformViewActivity extends BaseActivity {
 		// 保存
 		fbSave = (Button) findViewById(R.id.btn_save);
 		//fbSave.setText("条件");
+		getRightChangeBtn(RIGHT_SEARCH);
 		fbSave.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {

@@ -1,32 +1,27 @@
 package com.winso.break_law.activity;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
+import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.winso.break_law.R;
 import com.winso.break_law.activity.MainActivity.MyCallBack;
 import com.winso.break_law.app.AppContext;
 import com.winso.break_law.app.UIHelper;
-import com.winso.comm_library.CallbackInterface;
-import com.winso.comm_library.icedb.DownloadFileTask;
 import com.winso.comm_library.icedb.SelectHelp;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
-import android.widget.AdapterView.OnItemClickListener;
 
 public class MainQueryBreakViewActivity extends BaseActivity {
 	private PullToRefreshListView mPullRefreshListView;
@@ -37,7 +32,7 @@ public class MainQueryBreakViewActivity extends BaseActivity {
 	AppContext appContext;
 	MyCallBack myCallback; //
 
-	private Button fbSave, fbReturn;
+	private Button fbReturn;
 	SelectHelp rtnValue = new SelectHelp();
 	
 	
@@ -65,13 +60,13 @@ public class MainQueryBreakViewActivity extends BaseActivity {
 
 		);
 
-		// 保存
+		// 查询记录
 		fbSave = (Button) findViewById(R.id.btn_save);
 		//fbSave.setText("条件");
-		Drawable drawable= getResources().getDrawable(R.drawable.cond);
-		drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
-		fbSave.setCompoundDrawables(drawable,null,null,null);
-		
+//		Drawable drawable= getResources().getDrawable(R.drawable.cond);
+//		drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
+//		fbSave.setCompoundDrawables(drawable,null,null,null);
+		getRightChangeBtn(RIGHT_SEARCH);
 		fbSave.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {

@@ -57,7 +57,7 @@ public class BreakViewModifyActivity extends BaseActivity {
 	private boolean bProcessSaveOK = false; // 保存是否成功
 	private String sFilePath = ""; // 加载的本地文件图片
 	private ImageView fViewPhoto;
-	private Button fbSave;
+//	private Button fbSave;
 	boolean  mDownloadOK= false;
 	MyCallBack myCallback; //
 	String msDownloadFilePath="";
@@ -136,9 +136,10 @@ public class BreakViewModifyActivity extends BaseActivity {
 		});
 
 		//
-		// 设置保存信息
+		// 保存信息
 		fbSave = (Button) findViewById(R.id.btn_save);
-		fbSave.setVisibility(View.INVISIBLE);
+//		fbSave.setVisibility(View.INVISIBLE);
+		getRightChangeBtn(RIGHT_SUBMIT);
 		
 		fbSave.setOnClickListener(new OnClickListener() {
 
@@ -154,7 +155,6 @@ public class BreakViewModifyActivity extends BaseActivity {
 
 			@Override
 			public void onClick(View v) {
-
 				//
 				if (sFilePath.length() <= 0)
 					return;
@@ -172,11 +172,6 @@ public class BreakViewModifyActivity extends BaseActivity {
 	private void InitControl() {
 
 		fViewPhoto = (ImageView) findViewById(R.id.img_break);
-
-		// mSpinnerCheck = (Spinner)findViewById(R.id.sp_check_status);
-		// private TextView
-		// tvProjectDept,txBreakOption,txBreakDate,txBreakContent;
-		// private EditText edViewLevel1,edViewLevel2,edViewLevel3,edViewLevel4;
 
 		tvProjectDept = (TextView) findViewById(R.id.tx_project_dept);
 		txBreakOption = (TextView) findViewById(R.id.tx_break_option);

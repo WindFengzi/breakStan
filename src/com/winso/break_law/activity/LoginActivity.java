@@ -2,22 +2,25 @@ package com.winso.break_law.activity;
 
 import java.io.InputStream;
 
-import com.winso.break_law.app.*;
 import com.winso.break_law.R;
+import com.winso.break_law.app.AppContext;
+import com.winso.break_law.app.UIHelper;
+import com.winso.comm_library.EasyLog;
+import com.winso.comm_library.FileUtils;
 import com.winso.comm_library.icedb.SelectHelp;
 import com.winso.comm_library.icedb.SelectHelpParam;
 
-import com.winso.comm_library.*;
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
-import android.app.ProgressDialog;
-import android.content.Intent;
 
 public class LoginActivity extends BaseActivity {
 
@@ -54,7 +57,7 @@ public class LoginActivity extends BaseActivity {
 
 		// 加载以前的配置信息
 		loadOldUser();
-
+		AppContext.getInstance().addActivity(this);
 		// 绑定登录按钮点击事件。
 		// mBtnLogin.setOnClickListener(new Listener());
 
@@ -99,8 +102,17 @@ public class LoginActivity extends BaseActivity {
 		}
 	}
 
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		appContext.setCookie("login_exit", "exit");
+	}
+	
 	private boolean loadOldUser() {
-
+//		if(appContext == null) {
+//			return false;
+//		}
 		mCheckAutoLogin.setChecked(appContext.getCookieBoolean("login_auto"));
 		mCheckRemInfo.setChecked(appContext.getCookieBoolean("login_rem"));
 
@@ -169,7 +181,9 @@ public class LoginActivity extends BaseActivity {
 						.toString());
 				appContext.setCookie("login_pass", mEditUserPasswd.getText()
 						.toString());
-
+				
+				appContext.setCookie("login_exit", "login");
+				
 				InputStream is = getResources().openRawResource(
 						R.raw.break_law_local_exec);
 
@@ -238,5 +252,64 @@ public class LoginActivity extends BaseActivity {
 			dismissDialog();
 		}
 	}
+	
+	/**
+	 * 双击突出查询
+	 * @author Hman
+	 * @date 2016/8/12
+	 * */
+	private long firstTime=0;
+	public boolean onKeyUp(int keyCode, KeyEvent event) { 
+        if (keyCode == KeyEvent.KEYCODE_BACK) { 
+            long secondTime = System.currentTimeMillis(); 
+            if (secondTime - firstTime > 800) {//如果两次按键时间间隔大于800毫秒，则不退出 
+                Toast.makeText(this, "再按一次退出程序", 
+                        Toast.LENGTH_SHORT).show(); 
+                firstTime = secondTime;//更新firstTime 
+                return true; 
+            } else { 
+//                System.exit(0);//否则退出程序 
+            	AppContext.getInstance().exit();
+            } 
+        } 
+        return super.onKeyUp(keyCode, event); 
+    }
 
+	/**
+	 * 双击突出查询
+	 * @author Hman
+	 * @date 2016/8/12
+	 * */
+//	@Override
+//	public boolean onKeyDown(int keyCode, KeyEvent event) {
+//		if (keyCode == KeyEvent.KEYCODE_BACK) {
+//			exitBy2Click();
+//		}
+//		
+//		return false;
+//	}
+//	
+//	private static boolean isExit = false;
+//
+//	private void exitBy2Click() {
+//		Timer tExit = null;
+//		if (isExit == false) {
+//			isExit = true; // 准备退出
+//			Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
+//			tExit = new Timer();
+//			tExit.schedule(new TimerTask(){
+//
+//				@Override
+//				public void run() {
+//					isExit = false; // 取消退出					
+//				}				
+//			}, 800);
+//			
+//		} else {
+//			finish();
+//			System.exit(0);
+//		}
+//		
+//	}
+	
 }
